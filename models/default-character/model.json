@@ -1,0 +1,15 @@
+{
+  "id": "default-character",
+  "name": "千駄ヶ谷 渋 (Sendagaya Shibu)",
+  "description": "VRoid 样例模型 AvatarSample_D（默认角色）",
+  "author": "pixiv Inc. / VRoid Project",
+  "license": "CC0-1.0",
+  "source": "https://opengameart.org/content/vroid-studio-cc0-models",
+  "version": "1.0.0",
+  "vrmVersion": "0.x",
+  "tags": [
+    "default",
+    "vroid"
+  ],
+  "credit": "千駄ヶ谷 渋 (Sendagaya Shibu) — VRoid sample model by pixiv Inc. / VRoid Project, released under CC0 1.0."
+}

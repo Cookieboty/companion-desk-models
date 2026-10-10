@@ -1,0 +1,14 @@
+{
+  "id": "vivi",
+  "name": "ビビ (Vivi)",
+  "description": "VRoid 样例模型 AvatarSample_E",
+  "author": "pixiv Inc. / VRoid Project",
+  "license": "CC0-1.0",
+  "source": "https://opengameart.org/content/vroid-studio-cc0-models",
+  "version": "1.0.0",
+  "vrmVersion": "0.x",
+  "tags": [
+    "vroid"
+  ],
+  "credit": "ビビ (Vivi) — VRoid sample model by pixiv Inc. / VRoid Project, released under CC0 1.0."
+}
