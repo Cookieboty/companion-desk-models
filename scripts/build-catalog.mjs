@@ -6,7 +6,8 @@
  *   node scripts/build-catalog.mjs --check  # CI: fail if catalog.json is stale or any rule is broken
  *
  * Rules (also enforced again by the app at runtime):
- *  - license must be an SPDX id from allowed-licenses.json
+ *  - license must be an SPDX id from allowed-licenses.json, or a reviewed LicenseRef
+ *    (commercial use + redistribution permitted; terms + conditions copied into licenseTerms)
  *  - id: [a-z0-9-]{2,64}; version: semver x.y.z
  *  - model.vrm must be a GLB with a VRM / VRMC_vrm extension, <= 200 MB
  *  - thumb.jpg|png <= 1 MB
@@ -21,7 +22,23 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const REPO = 'Cookieboty/companion-desk-models';
 const MAX_VRM = 200 * 1024 * 1024;
 const MAX_THUMB = 1024 * 1024;
-const allowed = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'allowed-licenses.json'), 'utf8')).allowed);
+const licenceCfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'allowed-licenses.json'), 'utf8'));
+const allowed = new Set(licenceCfg.allowed);
+/** Reviewed non-OSI licences: commercial use + redistribution must be permitted. */
+const reviewed = licenceCfg.reviewed ?? {};
+
+/** -> { name, url, conditions } or an error string */
+function licenceTerms(meta) {
+  const r = reviewed[meta.license];
+  if (!r) return null;
+  const conditions = r.perModelConditions ? meta.licenseConditions : r.conditions;
+  if (!conditions) return `licence ${meta.license} needs per-model licenseConditions in model.json`;
+  for (const [k, v] of Object.entries(r.requires ?? { commercialUse: true, redistribution: true }))
+    if (conditions[k] !== v) return `licence ${meta.license}: ${k} must be ${v}`;
+  if (conditions.commercialUse !== true || conditions.redistribution !== true)
+    return `licence ${meta.license}: commercial use and redistribution must both be permitted`;
+  return { name: r.name, url: meta.licenseUrl ?? r.url, conditions };
+}
 const check = process.argv.includes('--check');
 const errors = [];
 
@@ -54,7 +71,9 @@ for (const id of fs.readdirSync(path.join(ROOT, 'models')).sort()) {
   if (meta.id !== id) errors.push(`${id}: model.json id "${meta.id}" must equal the folder name`);
   if (!/^[a-z0-9-]{2,64}$/.test(id)) errors.push(`${id}: invalid id`);
   if (!/^\d+\.\d+\.\d+$/.test(meta.version ?? '')) errors.push(`${id}: version must be x.y.z`);
-  if (!allowed.has(meta.license)) errors.push(`${id}: licence "${meta.license}" is not allowed`);
+  const terms = licenceTerms(meta);
+  if (typeof terms === 'string') errors.push(`${id}: ${terms}`);
+  else if (!allowed.has(meta.license) && !terms) errors.push(`${id}: licence "${meta.license}" is not allowed`);
   for (const k of ['name', 'author', 'source', 'credit']) if (!meta[k]) errors.push(`${id}: missing ${k}`);
   if (meta.source && !meta.source.startsWith('https://')) errors.push(`${id}: source must be https`);
 
@@ -75,6 +94,7 @@ for (const id of fs.readdirSync(path.join(ROOT, 'models')).sort()) {
     description: meta.description ?? '',
     author: meta.author,
     license: meta.license,
+    ...(terms && typeof terms === 'object' ? { licenseTerms: terms } : {}),
     source: meta.source,
     version: meta.version,
     vrmVersion: detected ?? meta.vrmVersion,

@@ -89,8 +89,26 @@ the app shows "update available" for users who installed the old version.
 | victoria-rubin | ヴィクトリア・ルービン (Victoria Rubin) | CC0-1.0 |
 | darkness-shibu | Darkness Shibu | CC0-1.0 |
 | hair-sample-female | HairSample_Female | CC0-1.0 |
+| avatar-sample-a | AvatarSample_A (VRM 0.x) | LicenseRef-VRoid-AvatarSample |
+| avatar-sample-b | AvatarSample_B (VRM 1.0) | LicenseRef-VRoid-AvatarSample |
 
-All seven are VRoid sample models by pixiv Inc. / VRoid Project under CC0 1.0 (the first five via
-<https://opengameart.org/content/vroid-studio-cc0-models>; Darkness Shibu and HairSample_Female
-from <https://github.com/madjin/vrm-samples/tree/master/vroid/beta>, CC0 per their VRM meta). AvatarSample_A/B/C are
-intentionally **not** included: they ship under pixiv's own terms, not an open licence.
+The seven CC0 models are VRoid sample models by pixiv Inc. / VRoid Project (the first five via
+<https://opengameart.org/content/vroid-studio-cc0-models>; Darkness Shibu and HairSample_Female from
+<https://github.com/madjin/vrm-samples/tree/master/vroid/beta>, CC0 per their VRM meta).
+
+AvatarSample_A (from madjin/vrm-samples `vroid/stable`) and AvatarSample_B (VRM 1.0, from pixiv/ChatVRM) are under
+pixiv's **VRoid AvatarSample terms** (<https://vroid.pixiv.help/hc/ja/articles/4402394424089>), recorded as
+`LicenseRef-VRoid-AvatarSample`: commercial use OK, redistribution OK, modification OK, credit not required;
+use for hate speech / discrimination or antisocial purposes is prohibited. Their catalog entries carry these
+conditions in `licenseTerms`.
+
+## Licence policy
+
+`allowed-licenses.json` has two lists:
+
+- `allowed` — open licences (SPDX): CC0-1.0, CC-BY-4.0, CC-BY-SA-4.0, MIT, Apache-2.0, OFL-1.1.
+- `reviewed` — explicitly reviewed non-OSI licences that **permit commercial use and redistribution**
+  (`LicenseRef-VRoid-AvatarSample`, `LicenseRef-VRM-Public-1.0`). The build copies their terms URL and
+  conditions into the entry's `licenseTerms`; VRM Public License models must state per-model
+  `licenseConditions` in `model.json` (taken from the VRM meta), and the build fails unless
+  `commercialUse` and `redistribution` are both `true`. Adding a new licence here needs a maintainer review.

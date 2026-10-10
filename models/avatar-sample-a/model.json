@@ -1,0 +1,16 @@
+{
+  "id": "avatar-sample-a",
+  "name": "AvatarSample_A",
+  "description": "VRoid official sample avatar (VRM 0.x)",
+  "author": "pixiv Inc. / VRoid Project",
+  "license": "LicenseRef-VRoid-AvatarSample",
+  "licenseUrl": "https://vroid.pixiv.help/hc/ja/articles/4402394424089",
+  "source": "https://github.com/madjin/vrm-samples/tree/master/vroid/stable",
+  "version": "1.0.0",
+  "vrmVersion": "0.x",
+  "tags": [
+    "vroid",
+    "sample"
+  ],
+  "credit": "AvatarSample_A — VRoid sample avatar by pixiv Inc. / VRoid Project. AvatarSample terms: commercial use OK, redistribution OK, modification OK, credit not required; no hate/antisocial use."
+}
