@@ -1,0 +1,13 @@
+{
+  "id": "shapell",
+  "name": "シェイプル (Shapell)",
+  "description": "Cat-eared girl by lowteq, converted from the official .blend to VRM 1.0 (MToon, spring bones, expressions)",
+  "author": "lowteq",
+  "license": "CC0-1.0",
+  "licenseFile": "LICENSE.txt",
+  "source": "https://booth.pm/ja/items/1349366",
+  "version": "1.0.3",
+  "vrmVersion": "1.0",
+  "tags": ["original", "cat-ears"],
+  "credit": "Shapell v1.0.3 by lowteq (CC0 1.0, https://booth.pm/ja/items/1349366). Converted to VRM 1.0 by Companion Desk with Blender 4.2 + VRM Add-on for Blender (scripts/convert/shapell_to_vrm.py); textures downscaled to 2048 px, unused shape keys removed. The original Unity arktoon shader is not included."
+}

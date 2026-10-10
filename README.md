@@ -89,12 +89,19 @@ the app shows "update available" for users who installed the old version.
 | victoria-rubin | ヴィクトリア・ルービン (Victoria Rubin) | CC0-1.0 |
 | darkness-shibu | Darkness Shibu | CC0-1.0 |
 | hair-sample-female | HairSample_Female | CC0-1.0 |
+| shapell | シェイプル (Shapell) by lowteq (VRM 1.0, converted) | CC0-1.0 |
 | avatar-sample-a | AvatarSample_A (VRM 0.x) | LicenseRef-VRoid-AvatarSample |
 | avatar-sample-b | AvatarSample_B (VRM 1.0) | LicenseRef-VRoid-AvatarSample |
 
 The seven CC0 models are VRoid sample models by pixiv Inc. / VRoid Project (the first five via
 <https://opengameart.org/content/vroid-studio-cc0-models>; Darkness Shibu and HairSample_Female from
 <https://github.com/madjin/vrm-samples/tree/master/vroid/beta>, CC0 per their VRM meta).
+
+Shapell (by lowteq, <https://booth.pm/ja/items/1349366>) is CC0 1.0 per the `LICENSE.txt` shipped in the
+author's archive (kept at `models/shapell/LICENSE.txt`). The archive only had .blend/.fbx/.unitypackage, so it
+was converted to VRM 1.0 headlessly with Blender 4.2 + VRM Add-on for Blender (MIT) using
+`scripts/convert/shapell_to_vrm.py` (MToon materials, humanoid mapping, 13 expressions, 45 spring chains;
+textures downscaled to 2048 px). The arktoon shader mentioned in the licence is not included.
 
 AvatarSample_A (from madjin/vrm-samples `vroid/stable`) and AvatarSample_B (VRM 1.0, from pixiv/ChatVRM) are under
 pixiv's **VRoid AvatarSample terms** (<https://vroid.pixiv.help/hc/ja/articles/4402394424089>), recorded as

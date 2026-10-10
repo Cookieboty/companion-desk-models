@@ -82,6 +82,8 @@ for (const id of fs.readdirSync(path.join(ROOT, 'models')).sort()) {
   const detected = vrmVersionOf(vrm, id);
   if (detected && meta.vrmVersion && meta.vrmVersion !== detected)
     errors.push(`${id}: vrmVersion "${meta.vrmVersion}" but file is ${detected}`);
+  if (meta.licenseFile && !fs.existsSync(path.join(dir, meta.licenseFile)))
+    errors.push(`${id}: licenseFile ${meta.licenseFile} not found`);
   const thumbName = ['thumb.jpg', 'thumb.png'].find((f) => fs.existsSync(path.join(dir, f)));
   if (!thumbName) errors.push(`${id}: missing thumb.jpg / thumb.png`);
   const thumb = thumbName ? fs.readFileSync(path.join(dir, thumbName)) : Buffer.alloc(0);
@@ -100,6 +102,7 @@ for (const id of fs.readdirSync(path.join(ROOT, 'models')).sort()) {
     vrmVersion: detected ?? meta.vrmVersion,
     tags: meta.tags ?? [],
     credit: meta.credit,
+    ...(meta.licenseFile ? { licenseFileUrl: `https://github.com/${REPO}/blob/${tag}/models/${id}/${meta.licenseFile}` } : {}),
     vrm: {
       // Releases first (no per-file CDN limit), then jsDelivr (<= 20 MB per file) and raw as fallbacks
       urls: [
