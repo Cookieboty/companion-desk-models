@@ -3,6 +3,38 @@
   "repository": "https://github.com/Cookieboty/companion-desk-models",
   "models": [
     {
+      "id": "darkness-shibu",
+      "name": "Darkness Shibu",
+      "description": "VRoid Studio beta sample model",
+      "author": "pixiv Inc. / VRoid Project",
+      "license": "CC0-1.0",
+      "source": "https://github.com/madjin/vrm-samples/tree/master/vroid/beta",
+      "version": "1.0.0",
+      "vrmVersion": "0.x",
+      "tags": [
+        "vroid",
+        "sample"
+      ],
+      "credit": "Darkness Shibu — VRoid Studio sample model by pixiv Inc. / VRoid Project; VRM meta licence CC0 (see https://vroid.pixiv.help).",
+      "vrm": {
+        "urls": [
+          "https://github.com/Cookieboty/companion-desk-models/releases/download/darkness-shibu-v1.0.0/darkness-shibu.vrm",
+          "https://cdn.jsdelivr.net/gh/Cookieboty/companion-desk-models@darkness-shibu-v1.0.0/models/darkness-shibu/model.vrm",
+          "https://raw.githubusercontent.com/Cookieboty/companion-desk-models/darkness-shibu-v1.0.0/models/darkness-shibu/model.vrm"
+        ],
+        "sha256": "0b50573d2d054d98c0a6fc5a5ce872e1b2c8bff8718476ff72a9a68c48674fd8",
+        "size": 20423112
+      },
+      "thumbnail": {
+        "urls": [
+          "https://cdn.jsdelivr.net/gh/Cookieboty/companion-desk-models@darkness-shibu-v1.0.0/models/darkness-shibu/thumb.jpg",
+          "https://raw.githubusercontent.com/Cookieboty/companion-desk-models/darkness-shibu-v1.0.0/models/darkness-shibu/thumb.jpg"
+        ],
+        "sha256": "88890487646bb581154c29a7fdfa09d91faaf7660ce206719b3d7f2a8c8bab25",
+        "size": 17406
+      }
+    },
+    {
       "id": "default-character",
       "name": "千駄ヶ谷 渋 (Sendagaya Shibu)",
       "description": "VRoid 样例模型 AvatarSample_D（默认角色）",
@@ -32,6 +64,38 @@
         ],
         "sha256": "ab78d1623b0a07725fcc9a10ca64a966c26d80490abcf9c489e7138628dccafa",
         "size": 13914
+      }
+    },
+    {
+      "id": "hair-sample-female",
+      "name": "HairSample_Female",
+      "description": "VRoid Studio beta sample model",
+      "author": "pixiv Inc. / VRoid Project",
+      "license": "CC0-1.0",
+      "source": "https://github.com/madjin/vrm-samples/tree/master/vroid/beta",
+      "version": "1.0.0",
+      "vrmVersion": "0.x",
+      "tags": [
+        "vroid",
+        "sample"
+      ],
+      "credit": "HairSample_Female — VRoid Studio sample model by pixiv Inc. / VRoid Project; VRM meta licence CC0 (see https://vroid.pixiv.help).",
+      "vrm": {
+        "urls": [
+          "https://github.com/Cookieboty/companion-desk-models/releases/download/hair-sample-female-v1.0.0/hair-sample-female.vrm",
+          "https://cdn.jsdelivr.net/gh/Cookieboty/companion-desk-models@hair-sample-female-v1.0.0/models/hair-sample-female/model.vrm",
+          "https://raw.githubusercontent.com/Cookieboty/companion-desk-models/hair-sample-female-v1.0.0/models/hair-sample-female/model.vrm"
+        ],
+        "sha256": "adfd242317aaabc773f31f7fff7b013979fbb5baa47e97427a78913d9cb4e979",
+        "size": 17518216
+      },
+      "thumbnail": {
+        "urls": [
+          "https://cdn.jsdelivr.net/gh/Cookieboty/companion-desk-models@hair-sample-female-v1.0.0/models/hair-sample-female/thumb.jpg",
+          "https://raw.githubusercontent.com/Cookieboty/companion-desk-models/hair-sample-female-v1.0.0/models/hair-sample-female/thumb.jpg"
+        ],
+        "sha256": "04ffcda9d3c9cf25051d37c6374373762f0eb8f4487db06486338d9ee8704630",
+        "size": 15212
       }
     },
     {

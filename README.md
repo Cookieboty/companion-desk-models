@@ -87,6 +87,10 @@ the app shows "update available" for users who installed the old version.
 | vivi | ビビ (Vivi) | CC0-1.0 |
 | vita | ヴィータ (Vita) | CC0-1.0 |
 | victoria-rubin | ヴィクトリア・ルービン (Victoria Rubin) | CC0-1.0 |
+| darkness-shibu | Darkness Shibu | CC0-1.0 |
+| hair-sample-female | HairSample_Female | CC0-1.0 |
 
-All five are VRoid sample models by pixiv Inc. / VRoid Project, released under CC0 1.0
-(<https://opengameart.org/content/vroid-studio-cc0-models>).
+All seven are VRoid sample models by pixiv Inc. / VRoid Project under CC0 1.0 (the first five via
+<https://opengameart.org/content/vroid-studio-cc0-models>; Darkness Shibu and HairSample_Female
+from <https://github.com/madjin/vrm-samples/tree/master/vroid/beta>, CC0 per their VRM meta). AvatarSample_A/B/C are
+intentionally **not** included: they ship under pixiv's own terms, not an open licence.

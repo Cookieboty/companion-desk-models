@@ -84,7 +84,9 @@ for (const id of fs.readdirSync(path.join(ROOT, 'models')).sort()) {
       // Releases first (no per-file CDN limit), then jsDelivr (<= 20 MB per file) and raw as fallbacks
       urls: [
         `https://github.com/${REPO}/releases/download/${tag}/${id}.vrm`,
-        ...(vrm.length <= 20 * 1024 * 1024 ? urlsFor(tag, `models/${id}/model.vrm`) : []),
+        ...urlsFor(tag, `models/${id}/model.vrm`).filter(
+          (u) => vrm.length <= 20 * 1024 * 1024 || !u.includes('cdn.jsdelivr.net'),
+        ),
       ],
       sha256: sha256(vrm),
       size: vrm.length,

@@ -1,0 +1,15 @@
+{
+  "id": "darkness-shibu",
+  "name": "Darkness Shibu",
+  "description": "VRoid Studio beta sample model",
+  "author": "pixiv Inc. / VRoid Project",
+  "license": "CC0-1.0",
+  "source": "https://github.com/madjin/vrm-samples/tree/master/vroid/beta",
+  "version": "1.0.0",
+  "vrmVersion": "0.x",
+  "tags": [
+    "vroid",
+    "sample"
+  ],
+  "credit": "Darkness Shibu — VRoid Studio sample model by pixiv Inc. / VRoid Project; VRM meta licence CC0 (see https://vroid.pixiv.help)."
+}
